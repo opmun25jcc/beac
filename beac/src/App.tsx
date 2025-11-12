@@ -72,25 +72,12 @@ const locations: sharedTroops[] = [
 type enemyTroops = { position: google.maps.LatLngLiteral, title: string }
 const places: enemyTroops[] = [
   {
-    position: { lat: 1.296299, lng: 103.849478 },
-    title: "Japanese squad"
+    position: { lat: 2.063272, lng: 102.585191 },
+    title: "Last known sighting of Japanese troops"
   },
-  {
-    position: { lat: 1.278794, lng: 103.860807 },
-    title: "Last known location of Japanese tank regiment"
-  },
-  {
-    position: { lat: 1.296642, lng: 103.836775 },
-    title: "Japanese division"
-  },
-  {
-    position: { lat: 1.284972, lng: 103.790426 },
-    title: "Japanese division"
-  },
-  {
-    position: { lat: 1.295613, lng: 103.809995 },
-    title: "Japanese division"
-  },
+  {position:{lat: 6.103588, lng: 102.252299},
+    title:"Known Seisure by Japanese air force"
+    }
 
 ]
 
@@ -192,11 +179,16 @@ function App() {
 
             >
               <Polygon paths={[
-                { lat: 1.428569, lng: 103.698107 },
-                { lat: 1.460144, lng: 103.836123 },
-                { lat: 1.320110, lng: 104.018084 },
-                { lat: 1.266565, lng: 103.733126 },
-                { lat: 1.273430, lng: 103.617770 }]}
+                { lat: 6.751390, lng: 99.991443},
+                { lat: 6.478561, lng: 102.298572 },
+                {lat: 5.249637, lng: 103.188464},
+                {lat: 4.663522, lng: 103.551013},
+                { lat: 2.423655,lng: 103.875110},
+                //Add coords here ig
+                { lat: 2.033937, lng: 102.595202 },
+                {lat: 2.580405, lng: 101.210925},
+              {lat: 3.666419, lng: 100.749499},
+            {lat: 5.331137, lng: 100.123279},]}
                 fillColor={'#ff0000ff'}
                 strokeColor={'#ff4a4aff'} />
 
