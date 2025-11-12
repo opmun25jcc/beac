@@ -8,16 +8,21 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "rimraf dist && npm run build",
+    "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
     "@govtechsg/sgds": "^2.3.6",
     "@govtechsg/sgds-react": "^2.7.7",
     "@vis.gl/react-google-maps": "^1.7.1",
+    "gh-pages": "^6.3.0",
     "google": "^2.1.0",
     "maps": "^0.3.3",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "rimraf": "^6.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

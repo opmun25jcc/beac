@@ -4,6 +4,7 @@ import unionJack from './assets/unionJack.webp';
 import { Col, Row, Card } from '@govtechsg/sgds-react';
 import { APIProvider, Map, InfoWindow, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
 import { Polygon } from './polygon';
+import groupPic from './assets/DSC03210_sRGB_50.jpg';
 
 import { useState } from 'react';
 
@@ -213,19 +214,23 @@ function App() {
               </Card.Text>
             </Card.Body>
             </Card> */}
-          <Card style={{ marginLeft: '2vw', marginRight: '2vw', marginBottom: '4vw' }}>
+
+          <Card style={{marginLeft:'2vw', marginRight:'2vw', marginBottom:'4vw'}}>
+            <Card.Img
+              alt="img alternate text goes here"
+              src={groupPic}
+              variant="top"
+            />
             <Card.Body>
-              <Card.Title>Test for upload on SWN network</Card.Title>
-              <Card.Text>This is a test for committing on github and deploying on the SWN@SSOE network</Card.Text>
+              <Card.Title>
+                Welcome to Crisis!
+              </Card.Title>
+              If you are part of the British East Asia Cabinet, welcome!
+              <br/>
+              Else if you are part of the People's Defence Cabinet, go back to your cabinet updates page...
             </Card.Body>
           </Card>
 
-          <Card style={{ marginLeft: '2vw', marginRight: '2vw', marginBottom: '4vw' }}>
-            <Card.Body>
-              <Card.Title>Welcome to Crisis!</Card.Title>
-              <Card.Text>As our CD said, enjoy yourself today, and remember to send your dear friend backroom good directives!</Card.Text>
-            </Card.Body>
-          </Card>
           {/* <Card style={{ marginLeft: '2vw', marginRight: '2vw', marginBottom: '4vw' }}>
             <Card.Body>
               <Card.Title>
