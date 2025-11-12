@@ -1,0 +1,19 @@
+import { ButtonProps as BaseButtonProps } from '@restart/ui/Button';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { ButtonVariant } from '../utils/types';
+export interface ButtonProps extends BaseButtonProps, Omit<BsPrefixProps, 'as'> {
+    /** Manually set the visual state of the button to `:active` */
+    active?: boolean;
+    /**
+     * One or more button variant combinations buttons may be one of a variety of visual variants such as:
+     * `'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light', 'link'`
+     * as well as "outline" versions (prefixed by 'outline-*')
+     */
+    variant?: ButtonVariant;
+    /**Specifies a large or small button */
+    size?: 'sm' | 'lg';
+}
+export type ButtonSize = 'sm' | 'lg';
+export type CommonButtonProps = 'href' | 'size' | 'variant' | 'disabled';
+export declare const Button: BsPrefixRefForwardingComponent<'button', ButtonProps>;
+export default Button;

@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { AsProp, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export type FeedbackType = 'valid' | 'invalid';
+export interface FeedbackProps extends AsProp, React.HTMLAttributes<HTMLElement> {
+    bsPrefix?: never;
+    /**
+     * Specify whether the feedback is for valid or invalid fields
+     *
+     * @type {('valid'|'invalid')}
+     */
+    type?: FeedbackType;
+}
+export declare const Feedback: BsPrefixRefForwardingComponent<'div', FeedbackProps>;
+export default Feedback;

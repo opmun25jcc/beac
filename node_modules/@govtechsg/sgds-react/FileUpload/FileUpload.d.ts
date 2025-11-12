@@ -1,0 +1,31 @@
+import * as React from 'react';
+import { FormGroupProps } from '../Form/FormGroup';
+import { ButtonProps, ButtonSize } from '../Button/Button';
+import { ButtonVariant } from '../utils/types';
+type FileUpload = ButtonProps & FormGroupProps;
+/** @deprecated use undefined instead. To be removed in v3  **/
+declare const object: {};
+type SelectedFileType = FileList | undefined | typeof object;
+export interface FileUploadProps extends FileUpload {
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    /** Sets a unique id to the file input, required. */
+    controlId: string;
+    /** Expose the FileList object for uploading, preview etc */
+    onChangeFile: (data: FileList) => void;
+    /** Sets the FileList object back from the state for rendering list of file names */
+    selectedFile: SelectedFileType;
+    disabled?: boolean;
+    /** Customize the checked icon */
+    checkedIcon?: JSX.Element;
+    /** Customize the cancel icon */
+    cancelIcon?: JSX.Element;
+    /** When true, the user is allowed to enter more than one value in the input element */
+    multiple?: boolean;
+    /** Similar to the native accept attribute of input[type=file]. It takes as its value a comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow. */
+    accept?: string;
+    /** Forwarded to the className attribute of Button component in FileUpload. */
+    buttonClassName?: string;
+}
+export declare const FileUpload: React.FC<FileUploadProps>;
+export {};

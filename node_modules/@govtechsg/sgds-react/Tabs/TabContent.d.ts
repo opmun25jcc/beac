@@ -1,0 +1,3 @@
+/// <reference types="react" />
+export declare const TabContent: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export default TabContent;

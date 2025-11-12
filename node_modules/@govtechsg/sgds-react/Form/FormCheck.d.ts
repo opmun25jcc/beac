@@ -1,0 +1,48 @@
+import * as React from 'react';
+import { FeedbackType } from './Feedback';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export type FormCheckType = 'checkbox' | 'radio' | 'switch';
+export interface FormCheckProps extends BsPrefixProps, React.InputHTMLAttributes<HTMLInputElement> {
+    /**
+     * Groups controls horizontally with other `FormCheck`s.
+     */
+    inline?: boolean;
+    /**
+     * Disables the control.
+     */
+    disabled?: boolean;
+    /**
+     * Label for the control.
+     */
+    label?: React.ReactNode;
+    /**
+     * aria-label for label element.
+     */
+    ariaLabel?: string;
+    /**
+     * The type of checkable.
+     * @type {('radio' | 'checkbox' | 'switch')}
+     */
+    type?: FormCheckType;
+    /** Manually style the input as valid */
+    isValid?: boolean;
+    /** Manually style the input as invalid */
+    isInvalid?: boolean;
+    /** A message to display when the input is in a validation state */
+    feedback?: React.ReactNode;
+    /**
+     * Specify whether the feedback is for valid or invalid fields
+     */
+    feedbackType?: FeedbackType;
+    /**
+     * bsPrefix override for the base switch class.
+     *
+     * @default 'form-switch'
+     */
+    bsSwitchPrefix?: string;
+}
+declare const _default: BsPrefixRefForwardingComponent<"input", FormCheckProps> & {
+    Input: BsPrefixRefForwardingComponent<"input", import("./FormCheckInput").FormCheckInputProps>;
+    Label: React.ForwardRefExoticComponent<import("./FormCheckLabel").FormCheckLabelProps & React.RefAttributes<HTMLLabelElement>>;
+};
+export default _default;

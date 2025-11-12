@@ -1,0 +1,48 @@
+import * as React from 'react';
+import { BsPrefixProps } from '../utils/helpers';
+export interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement>, BsPrefixProps {
+    /**
+     * Minimum value progress can begin from
+     */
+    min?: number;
+    /**
+     * Current value of progress
+     */
+    now?: number;
+    /**
+     * Maximum value progress can reach
+     */
+    max?: number;
+    /**
+     * Show label that represents visual percentage.
+     * EG. 60%
+     */
+    label?: React.ReactNode;
+    /**
+     * Hide's the label visually.
+     */
+    visuallyHidden?: boolean;
+    /**
+     * Uses a gradient to create a striped effect.
+     */
+    striped?: boolean;
+    /**
+     * Animate's the stripes from right to left
+     */
+    animated?: boolean;
+    /**
+     * Sets the background class of the progress bar.
+     *
+     * @type ('success'|'danger'|'warning'|'info')
+     */
+    variant?: 'success' | 'danger' | 'warning' | 'info' | string;
+    /**Allows toggling display of progress bar */
+    isChild?: boolean;
+    /**
+     * Forwards to aria-label attribute on element with role="progressbar"
+     *
+     */
+    ariaLabel?: string;
+}
+declare const ProgressBar: React.ForwardRefExoticComponent<ProgressBarProps & React.RefAttributes<HTMLDivElement>>;
+export default ProgressBar;

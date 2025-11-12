@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { FormCheckType } from '../Form/FormCheck';
+import { CardProps } from '..';
+type CardFormCheckProps = React.InputHTMLAttributes<HTMLInputElement> & Omit<CardProps, 'variant'>;
+export interface SelectableCardProps extends CardFormCheckProps {
+    /** Disables the FormCheck control when true */
+    disabled?: boolean;
+    /** The type of checkable */
+    type?: FormCheckType;
+    /** Category title of the Card */
+    categoryTitle?: React.ReactNode;
+}
+declare const SelectableCard: React.FC<SelectableCardProps>;
+export default SelectableCard;

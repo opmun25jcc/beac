@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixRefForwardingComponent, BsPrefixProps } from '../utils/helpers';
+export interface AccordionHeaderProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+}
+export declare const AccordionHeader: BsPrefixRefForwardingComponent<'h2', AccordionHeaderProps>;
+export default AccordionHeader;

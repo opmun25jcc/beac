@@ -1,0 +1,12 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FooterTopProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+}
+export declare const FooterTop: BsPrefixRefForwardingComponent<'section', FooterTopProps>;
+declare const _default: BsPrefixRefForwardingComponent<"section", FooterTopProps> & {
+    Header: BsPrefixRefForwardingComponent<"div", import("./FooterTopHeader").FooterTopHeaderProps>;
+    ItemGroup: BsPrefixRefForwardingComponent<"div", import("./FooterTopItemGroup").FooterTopItemGroupProps>;
+    Item: BsPrefixRefForwardingComponent<"div", import("./FooterTopItem").FooterTopItemProps>;
+    ContactLinks: BsPrefixRefForwardingComponent<"div", import("./FooterTopContactLinks").FooterTopContactLinksProps>;
+};
+export default _default;

@@ -1,0 +1,10 @@
+import * as React from 'react';
+import { AsProp, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FormGroupProps extends React.HTMLAttributes<HTMLElement>, AsProp {
+    /**
+     * Sets `id` on `<FormControl>` and `htmlFor` on `<FormGroup.Label>`.
+     */
+    controlId?: string;
+}
+export declare const FormGroup: BsPrefixRefForwardingComponent<'div', FormGroupProps>;
+export default FormGroup;

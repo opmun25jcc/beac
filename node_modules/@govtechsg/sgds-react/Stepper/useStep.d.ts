@@ -1,0 +1,48 @@
+export type OnDone = () => Promise<void>;
+export interface StepMetadata {
+    component: any;
+    title: string;
+    stepHeader: string;
+    onNextStep?: (onDone: OnDone) => Promise<void>;
+    onPreviousStep?: (onDone: OnDone) => Promise<void>;
+    onArrived?: () => Promise<void>;
+}
+export interface State {
+    currentStep: number;
+}
+export declare class WrappedStepMetadata {
+    private stepMetadata;
+    private index;
+    constructor(stepMetadata: StepMetadata, index: number);
+    get component(): any;
+    get title(): string;
+    get step(): number;
+    get stepHeader(): string;
+    onNextStep(onDone: OnDone): Promise<void>;
+    onPreviousStep(onDone: OnDone): Promise<void>;
+    onArrived(): Promise<void>;
+}
+export declare class WrappedStepsMetadata {
+    private wrappedStepMetadataArr;
+    constructor(wrappedStepMetadataArr: WrappedStepMetadata[]);
+    get length(): number;
+    findByStep(step: number): WrappedStepMetadata | undefined;
+    isFirstStep(step: number): boolean;
+    isLastStep(step: number): boolean;
+    isWithinStepRange(step: number): boolean;
+    get data(): WrappedStepMetadata[];
+}
+export interface UseStepMethods {
+    state: State;
+    stepsMetadata: WrappedStepsMetadata;
+    nextStep: () => Promise<void>;
+    prevStep: () => Promise<void>;
+    setStep: (step: number) => Promise<void>;
+    getTitle: () => any;
+    getComponent: () => any;
+    getNextButtonTitle: () => string;
+    getBackButtonTitle: () => string | null;
+    reset: () => Promise<void>;
+}
+declare function useStep(stepsMetadata: StepMetadata[]): UseStepMethods;
+export default useStep;

@@ -1,0 +1,36 @@
+import PropTypes from 'prop-types';
+import { BasePlacement } from '@popperjs/core';
+export type Variant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | string;
+export type ButtonVariant = Variant | 'link' | 'outline-primary' | 'outline-secondary' | 'outline-success' | 'outline-danger' | 'outline-warning' | 'outline-info' | 'outline-dark' | 'outline-light';
+export type Color = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'white' | 'muted';
+export type Placement = import('@restart/ui/usePopper').Placement;
+export type TooltipPlacement = BasePlacement | "top-start" | "bottom-start";
+export type CardVariant = 'card-action' | 'card-action-quantity-toggle';
+export type AlignDirection = 'start' | 'end';
+export type ResponsiveAlignProp = {
+    sm: AlignDirection;
+} | {
+    md: AlignDirection;
+} | {
+    lg: AlignDirection;
+} | {
+    xl: AlignDirection;
+} | {
+    xxl: AlignDirection;
+};
+export type AlignType = AlignDirection | ResponsiveAlignProp;
+export declare const alignDirection: PropTypes.Requireable<AlignDirection>;
+export declare const alignPropType: PropTypes.Requireable<NonNullable<AlignDirection | PropTypes.InferProps<{
+    sm: PropTypes.Requireable<AlignDirection>;
+}> | PropTypes.InferProps<{
+    md: PropTypes.Requireable<AlignDirection>;
+}> | PropTypes.InferProps<{
+    lg: PropTypes.Requireable<AlignDirection>;
+}> | PropTypes.InferProps<{
+    xl: PropTypes.Requireable<AlignDirection>;
+}> | PropTypes.InferProps<{
+    xxl: PropTypes.Requireable<AlignDirection>;
+}> | null | undefined>>;
+export type RootCloseEvent = 'click' | 'mousedown';
+export type GapValue = 0 | 1 | 2 | 3 | 4 | 5;
+export type Size = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';

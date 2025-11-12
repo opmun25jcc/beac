@@ -1,0 +1,10 @@
+import 'invariant';
+import 'react';
+import '@restart/hooks/useMergedRefs';
+
+function useWrappedRefWithWarning(ref, componentName) {
+    // @ts-ignore
+    return ref;
+}
+
+export { useWrappedRefWithWarning as default };

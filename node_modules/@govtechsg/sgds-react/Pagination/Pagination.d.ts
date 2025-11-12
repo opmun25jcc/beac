@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { PaginationBaseProps } from './PaginationBase';
+export interface PaginationProps extends PaginationBaseProps {
+    /** Inserts the length value from a given sets of data objects. Value can be set using useState hook */
+    dataLength: number;
+    /** Sets the starting active page upon render. Value can be set using useState hook */
+    currentPage: number;
+    /** Sets the amount of data objects to be displayed per page. Value can be set using useState hook */
+    itemsPerPage?: number;
+    /** Sets the page limit to be displayed at any given render. e.g 3, 5, 7, 9 */
+    limit?: number;
+    /**  Updates the current page in parent  */
+    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+    /** Sets the page direction button to contain text and/or icon */
+    directionVariant?: 'icon' | 'icon-text' | 'text';
+    /** Sets the size of all page items. */
+    size: 'sm' | 'md' | 'lg';
+    /** Toggles ellipsis buttons to be able to increment/decrement pages based on the ellipsisJump value set. By default, it will be false */
+    ellipsisOn: boolean;
+    /** When ellipsisOn is true, length of decrementing/incrementing of pages can be set with a number value*/
+    ellipsisJump: number;
+    /** Enables rendering of the first-page button on the pagination, allowing users to jump to the initial page. By default, it will be false */
+    showFirstPage?: boolean;
+    /** Enables rendering of the last-page button on the pagination, allowing users to jump to the last page. By default, it will be false */
+    showLastPage?: boolean;
+}
+export declare const Pagination: React.FC<PaginationProps>;

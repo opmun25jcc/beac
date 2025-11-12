@@ -1,0 +1,22 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export type SortOrder = 'asc' | 'desc';
+export interface TableSortLabelProps extends BsPrefixProps, React.HTMLAttributes<HTMLSpanElement> {
+    /**
+     * Handles the click event on the sort label. User is expected to pass in the sort
+     * handler function that will sort the respective table column.
+     *
+     * @param e The click event.
+     */
+    onClick: (e: React.MouseEvent<HTMLSpanElement>) => void;
+    /**
+     * Whether sorting is currently active on the column.
+     */
+    active: boolean;
+    /**
+     * Whether the column is currently sorted by ascending ('asc') or descending ('desc') order.
+     */
+    direction: SortOrder;
+}
+export declare const TableSortLabel: BsPrefixRefForwardingComponent<'span', TableSortLabelProps>;
+export default TableSortLabel;

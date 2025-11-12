@@ -1,0 +1,52 @@
+'use client';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var PropTypes = require('prop-types');
+var React = require('react');
+var classNames = require('classnames');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () { return e[k]; }
+        });
+      }
+    });
+  }
+  n["default"] = e;
+  return Object.freeze(n);
+}
+
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
+var React__namespace = /*#__PURE__*/_interopNamespace(React);
+var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
+
+const propTypes = {
+    'aria-label': PropTypes__default["default"].string,
+    onClick: PropTypes__default["default"].func,
+    /**
+     * Render different color variant for the button.
+     *
+     * Omitting this will render the default dark color.
+     */
+    variant: PropTypes__default["default"].oneOf(['white']),
+};
+const defaultProps = {
+    'aria-label': 'Close',
+};
+const CloseButton = React__namespace.forwardRef(({ className, variant, ...props }, ref) => (React__namespace.createElement("button", { ref: ref, type: "button", className: classNames__default["default"]('btn-close', variant && `btn-close-${variant}`, className), ...props })));
+CloseButton.displayName = 'CloseButton';
+CloseButton.propTypes = propTypes;
+CloseButton.defaultProps = defaultProps;
+
+exports.CloseButton = CloseButton;

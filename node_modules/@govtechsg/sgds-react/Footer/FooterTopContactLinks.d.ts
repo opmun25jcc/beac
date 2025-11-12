@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FooterTopContactLinksProps extends BsPrefixProps, React.HTMLAttributes<HTMLDivElement> {
+}
+export declare const FooterTopContactLinks: BsPrefixRefForwardingComponent<'div', FooterTopContactLinksProps>;
+export default FooterTopContactLinks;

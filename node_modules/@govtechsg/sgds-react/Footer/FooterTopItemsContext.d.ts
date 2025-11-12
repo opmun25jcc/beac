@@ -1,0 +1,6 @@
+import * as React from 'react';
+interface FooterTopItemGrpContextValue {
+    noOfItem: number;
+}
+declare const context: React.Context<FooterTopItemGrpContextValue>;
+export default context;

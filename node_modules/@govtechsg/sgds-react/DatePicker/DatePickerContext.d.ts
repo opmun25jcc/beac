@@ -1,0 +1,16 @@
+import * as React from 'react';
+export type CalendarView = 'day' | 'month' | 'year';
+export interface DatePickerContextProps {
+    view: CalendarView;
+    setView: React.Dispatch<React.SetStateAction<CalendarView>>;
+    focusedDateIndex: number;
+    setFocusedDateIndex: React.Dispatch<React.SetStateAction<number>>;
+    focusedMonthIndex: number;
+    setFocusedMonthIndex: React.Dispatch<React.SetStateAction<number>>;
+    focusedYearIndex: number;
+    setFocusedYearIndex: React.Dispatch<React.SetStateAction<number>>;
+    yearPositionIndex: number;
+    setYearPositionIndex: React.Dispatch<React.SetStateAction<number>>;
+}
+declare const context: React.Context<DatePickerContextProps>;
+export default context;

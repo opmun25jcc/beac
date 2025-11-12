@@ -1,0 +1,10 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface NavbarBrandProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /**
+     * An href, when provided the Brand will render as an `<a>` element (unless `as` is provided).
+     */
+    href?: string;
+}
+export declare const NavbarBrand: BsPrefixRefForwardingComponent<'a', NavbarBrandProps>;
+export default NavbarBrand;

@@ -1,0 +1,16 @@
+import * as React from 'react';
+import { Placement } from '../utils/types';
+import { BsPrefixProps } from '../utils/helpers';
+export interface PopoverProps extends React.HTMLAttributes<HTMLDivElement>, BsPrefixProps {
+    placement?: Placement;
+    title?: string;
+    body?: boolean;
+    popper?: any;
+    show?: boolean;
+}
+declare const _default: React.ForwardRefExoticComponent<PopoverProps & React.RefAttributes<HTMLDivElement>> & {
+    Header: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+    Body: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+    POPPER_OFFSET: readonly [0, 8];
+};
+export default _default;

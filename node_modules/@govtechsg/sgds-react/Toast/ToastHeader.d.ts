@@ -1,0 +1,21 @@
+import * as React from 'react';
+import { CloseButtonVariant } from '../CloseButton/CloseButton';
+import { BsPrefixOnlyProps } from '../utils/helpers';
+export interface ToastHeaderProps extends BsPrefixOnlyProps, React.HTMLAttributes<HTMLDivElement> {
+    /**
+     * Provides an accessible label for the close
+     * button. It is used for Assistive Technology when the label text is not
+     * readable.
+     */
+    closeLabel?: string;
+    /**
+     * Sets the variant for close button.
+     */
+    closeVariant?: CloseButtonVariant;
+    /**
+     * Specify whether the Component should contain a close button
+     */
+    closeButton?: boolean;
+}
+export declare const ToastHeader: React.ForwardRefExoticComponent<ToastHeaderProps & React.RefAttributes<HTMLDivElement>>;
+export default ToastHeader;

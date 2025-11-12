@@ -1,0 +1,163 @@
+'use client';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var classNames = require('classnames');
+var css = require('dom-helpers/css');
+var PropTypes = require('prop-types');
+var React = require('react');
+var Transition = require('react-transition-group/Transition');
+var transitionEndListener = require('../utils/transitionEndListener');
+var createChainedFunction = require('../utils/createChainedFunction');
+var triggerBrowserReflow = require('../utils/triggerBrowserReflow');
+var TransitionWrapper = require('../utils/TransitionWrapper');
+var utils = require('@restart/ui/utils');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
+var css__default = /*#__PURE__*/_interopDefaultLegacy(css);
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var transitionEndListener__default = /*#__PURE__*/_interopDefaultLegacy(transitionEndListener);
+var createChainedFunction__default = /*#__PURE__*/_interopDefaultLegacy(createChainedFunction);
+var triggerBrowserReflow__default = /*#__PURE__*/_interopDefaultLegacy(triggerBrowserReflow);
+var TransitionWrapper__default = /*#__PURE__*/_interopDefaultLegacy(TransitionWrapper);
+
+const MARGINS = {
+    height: ['marginTop', 'marginBottom'],
+    width: ['marginLeft', 'marginRight'],
+};
+function getDefaultDimensionValue(dimension, elem) {
+    const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
+    const value = elem[offset];
+    const margins = MARGINS[dimension];
+    return (value +
+        // @ts-ignore
+        parseInt(css__default["default"](elem, margins[0]), 10) +
+        // @ts-ignore
+        parseInt(css__default["default"](elem, margins[1]), 10));
+}
+const collapseStyles = {
+    [Transition.EXITED]: 'collapse',
+    [Transition.EXITING]: 'collapsing',
+    [Transition.ENTERING]: 'collapsing',
+    [Transition.ENTERED]: 'collapse show',
+};
+const propTypes = {
+    /**
+     * Show the component; triggers the expand or collapse animation
+     */
+    in: PropTypes__default["default"].bool,
+    /**
+     * Wait until the first "enter" transition to mount the component (add it to the DOM)
+     */
+    mountOnEnter: PropTypes__default["default"].bool,
+    /**
+     * Unmount the component (remove it from the DOM) when it is collapsed
+     */
+    unmountOnExit: PropTypes__default["default"].bool,
+    /**
+     * Run the expand animation when the component mounts, if it is initially
+     * shown
+     */
+    appear: PropTypes__default["default"].bool,
+    /**
+     * Duration of the collapse animation in milliseconds, to ensure that
+     * finishing callbacks are fired even if the original browser transition end
+     * events are canceled
+     */
+    timeout: PropTypes__default["default"].number,
+    /**
+     * Callback fired before the component expands
+     */
+    onEnter: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the component starts to expand
+     */
+    onEntering: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the component has expanded
+     */
+    onEntered: PropTypes__default["default"].func,
+    /**
+     * Callback fired before the component collapses
+     */
+    onExit: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the component starts to collapse
+     */
+    onExiting: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the component has collapsed
+     */
+    onExited: PropTypes__default["default"].func,
+    /**
+     * The dimension used when collapsing, or a function that returns the
+     * dimension
+     */
+    dimension: PropTypes__default["default"].oneOfType([
+        PropTypes__default["default"].oneOf(['height', 'width']),
+        PropTypes__default["default"].func,
+    ]),
+    /**
+     * Function that returns the height or width of the animating DOM node
+     *
+     * Allows for providing some custom logic for how much the Collapse component
+     * should animate in its specified dimension. Called with the current
+     * dimension prop value and the DOM node.
+     *
+     * @default element.offsetWidth | element.offsetHeight
+     */
+    getDimensionValue: PropTypes__default["default"].func,
+    /**
+     * ARIA role of collapsible element
+     */
+    role: PropTypes__default["default"].string,
+    /**
+     * You must provide a single JSX child element to this component and that element cannot be a \<React.Fragment\>
+     */
+    children: PropTypes__default["default"].element.isRequired,
+};
+const defaultProps = {
+    in: false,
+    timeout: 300,
+    mountOnEnter: false,
+    unmountOnExit: false,
+    appear: false,
+    getDimensionValue: getDefaultDimensionValue,
+};
+const Collapse = React__default["default"].forwardRef(({ onEnter, onEntering, onEntered, onExit, onExiting, className, children, dimension = 'height', getDimensionValue = getDefaultDimensionValue, ...props }, ref) => {
+    /* Compute dimension */
+    const computedDimension = typeof dimension === 'function' ? dimension() : dimension;
+    /* -- Expanding -- */
+    const handleEnter = React.useMemo(() => createChainedFunction__default["default"]((elem) => {
+        elem.style[computedDimension] = '0';
+    }, onEnter), [computedDimension, onEnter]);
+    const handleEntering = React.useMemo(() => createChainedFunction__default["default"]((elem) => {
+        const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(1)}`;
+        elem.style[computedDimension] = `${elem[scroll]}px`;
+    }, onEntering), [computedDimension, onEntering]);
+    const handleEntered = React.useMemo(() => createChainedFunction__default["default"]((elem) => {
+        elem.style[computedDimension] = null;
+    }, onEntered), [computedDimension, onEntered]);
+    /* -- Collapsing -- */
+    const handleExit = React.useMemo(() => createChainedFunction__default["default"]((elem) => {
+        elem.style[computedDimension] = `${getDimensionValue(computedDimension, elem)}px`;
+        triggerBrowserReflow__default["default"](elem);
+    }, onExit), [onExit, getDimensionValue, computedDimension]);
+    const handleExiting = React.useMemo(() => createChainedFunction__default["default"]((elem) => {
+        elem.style[computedDimension] = null;
+    }, onExiting), [computedDimension, onExiting]);
+    return (React__default["default"].createElement(TransitionWrapper__default["default"], { ref: ref, addEndListener: transitionEndListener__default["default"], ...props, "aria-expanded": props.role ? props.in : null, onEnter: handleEnter, onEntering: handleEntering, onEntered: handleEntered, onExit: handleExit, onExiting: handleExiting, childRef: utils.getChildRef(children) }, (state, innerProps) => React__default["default"].cloneElement(children, {
+        ...innerProps,
+        className: classNames__default["default"](className, children.props.className, collapseStyles[state], computedDimension === 'width' && 'collapse-horizontal'),
+    })));
+});
+// @ts-ignore
+Collapse.propTypes = propTypes;
+// @ts-ignore
+Collapse.defaultProps = defaultProps;
+
+exports.Collapse = Collapse;

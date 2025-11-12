@@ -1,0 +1,12 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FooterTopItemProps extends Omit<BsPrefixProps, 'bsPrefix'>, React.HTMLAttributes<HTMLDivElement> {
+    /** Category name of each item */
+    itemTitle?: React.ReactNode;
+    /** Forwards title className to .title */
+    titleClass?: string;
+    /** Forwards links className to .links */
+    linksClass?: string;
+}
+export declare const FooterTopItem: BsPrefixRefForwardingComponent<'div', FooterTopItemProps>;
+export default FooterTopItem;

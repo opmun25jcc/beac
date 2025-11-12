@@ -1,0 +1,12 @@
+import * as React from 'react';
+import { BsPrefixOnlyProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FormSelectProps extends BsPrefixOnlyProps, Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
+    /** Size variants   */
+    size?: 'sm' | 'lg';
+    /** Add "valid" validation styles to the control */
+    isValid?: boolean;
+    /** Add "invalid" validation styles to the control and accompanying label */
+    isInvalid?: boolean;
+}
+export declare const FormSelect: BsPrefixRefForwardingComponent<'select', FormSelectProps>;
+export default FormSelect;

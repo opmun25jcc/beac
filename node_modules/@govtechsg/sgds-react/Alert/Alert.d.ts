@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { Variant } from '../utils/types';
+import { BsPrefixProps, BsPrefixRefForwardingComponent, TransitionType } from '../utils/helpers';
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement>, BsPrefixProps {
+    /** The Alert visual color variant */
+    variant?: Omit<Variant, 'dark'>;
+    /** Renders a properly aligned dismiss button, as well as adding extra horizontal padding to the Alert */
+    dismissible?: boolean;
+    /** Controls the visual state of the Alert */
+    show?: boolean;
+    /** Callback fired when alert is closed*/
+    onClose?: (a: any, b: any) => void;
+    /** Sets the aria-label for alert close button*/
+    closeLabel?: string;
+    /**
+    * Animate the alert dismissal. Defaults to using `<Fade>` animation or use
+    * `false` to disable. A custom `react-transition-group` Transition can also
+    * be provided.
+    */
+    transition?: TransitionType;
+}
+export declare const Alert: BsPrefixRefForwardingComponent<'div', AlertProps>;
+declare const _default: BsPrefixRefForwardingComponent<"div", AlertProps> & {
+    Link: BsPrefixRefForwardingComponent<"a", BsPrefixProps<React.ElementType<any>>>;
+    Heading: BsPrefixRefForwardingComponent<React.ForwardRefExoticComponent<Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>, BsPrefixProps<React.ElementType<any>>>;
+};
+export default _default;

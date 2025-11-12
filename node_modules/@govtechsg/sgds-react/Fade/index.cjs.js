@@ -1,0 +1,127 @@
+'use client';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var classNames = require('classnames');
+var PropTypes = require('prop-types');
+var React = require('react');
+var Transition = require('react-transition-group/Transition');
+var transitionEndListener = require('../utils/transitionEndListener');
+var triggerBrowserReflow = require('../utils/triggerBrowserReflow');
+var TransitionWrapper = require('../utils/TransitionWrapper');
+var utils = require('@restart/ui/utils');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () { return e[k]; }
+        });
+      }
+    });
+  }
+  n["default"] = e;
+  return Object.freeze(n);
+}
+
+var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
+var React__namespace = /*#__PURE__*/_interopNamespace(React);
+var transitionEndListener__default = /*#__PURE__*/_interopDefaultLegacy(transitionEndListener);
+var triggerBrowserReflow__default = /*#__PURE__*/_interopDefaultLegacy(triggerBrowserReflow);
+var TransitionWrapper__default = /*#__PURE__*/_interopDefaultLegacy(TransitionWrapper);
+
+const propTypes = {
+    /**
+     * Show the component; triggers the fade in or fade out animation
+     */
+    in: PropTypes__default["default"].bool,
+    /**
+     * Wait until the first "enter" transition to mount the component (add it to the DOM)
+     */
+    mountOnEnter: PropTypes__default["default"].bool,
+    /**
+     * Unmount the component (remove it from the DOM) when it is faded out
+     */
+    unmountOnExit: PropTypes__default["default"].bool,
+    /**
+     * Run the fade in animation when the component mounts, if it is initially
+     * shown
+     */
+    appear: PropTypes__default["default"].bool,
+    /**
+     * Duration of the fade animation in milliseconds, to ensure that finishing
+     * callbacks are fired even if the original browser transition end events are
+     * canceled
+     */
+    timeout: PropTypes__default["default"].number,
+    /**
+     * Callback fired before the component fades in
+     */
+    onEnter: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the component starts to fade in
+     */
+    onEntering: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the has component faded in
+     */
+    onEntered: PropTypes__default["default"].func,
+    /**
+     * Callback fired before the component fades out
+     */
+    onExit: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the component starts to fade out
+     */
+    onExiting: PropTypes__default["default"].func,
+    /**
+     * Callback fired after the component has faded out
+     */
+    onExited: PropTypes__default["default"].func,
+    /**
+     * You must provide a single JSX child element to this component and that element cannot be a \<React.Fragment\>
+     */
+    children: PropTypes__default["default"].element.isRequired,
+    /**
+     * Applies additional specified classes during the transition. Takes an object
+     * where the keys correspond to the Transition status
+     */
+    transitionClasses: PropTypes__default["default"].object,
+};
+const defaultProps = {
+    in: false,
+    timeout: 300,
+    mountOnEnter: false,
+    unmountOnExit: false,
+    appear: false,
+};
+const fadeStyles = {
+    [Transition.ENTERING]: 'show',
+    [Transition.ENTERED]: 'show',
+};
+const Fade = React__namespace.forwardRef(({ className, children, transitionClasses = {}, ...props }, ref) => {
+    const handleEnter = React.useCallback((node, isAppearing) => {
+        triggerBrowserReflow__default["default"](node);
+        props.onEnter?.(node, isAppearing);
+    }, [props]);
+    return (React__namespace.createElement(TransitionWrapper__default["default"], { ref: ref, addEndListener: transitionEndListener__default["default"], ...props, onEnter: handleEnter, childRef: utils.getChildRef(children) }, (status, innerProps) => React__namespace.cloneElement(children, {
+        ...innerProps,
+        className: classNames__default["default"]('fade', className, children.props.className, 
+        //@ts-ignore
+        fadeStyles[status], transitionClasses[status]),
+    })));
+});
+Fade.propTypes = propTypes;
+Fade.defaultProps = defaultProps;
+Fade.displayName = 'Fade';
+
+exports.Fade = Fade;

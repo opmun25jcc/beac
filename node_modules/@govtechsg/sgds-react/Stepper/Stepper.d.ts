@@ -1,0 +1,7 @@
+import React from 'react';
+import { UseStepMethods } from './useStep';
+export interface StepperProps {
+    methods: UseStepMethods;
+}
+declare const Stepper: React.FC<StepperProps>;
+export default Stepper;

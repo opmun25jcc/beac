@@ -1,0 +1,12 @@
+import * as React from 'react';
+interface CalendarHeaderProps {
+    displayDate: Date;
+    onChange: (date: Date) => void;
+    resetFocusOnHeader: () => void;
+    handleTabPressOnPreviousButton: (event: React.KeyboardEvent<HTMLElement>) => void;
+    handleTabPressOnHeaderTitle: (event: React.KeyboardEvent<HTMLElement>) => void;
+    handleTabPressOnNextButton: (event: React.KeyboardEvent<HTMLElement>) => void;
+}
+export declare const MONTH_LABELS: string[];
+declare const CalendarHeader: React.ForwardRefExoticComponent<CalendarHeaderProps & React.RefAttributes<HTMLDivElement>>;
+export default CalendarHeader;

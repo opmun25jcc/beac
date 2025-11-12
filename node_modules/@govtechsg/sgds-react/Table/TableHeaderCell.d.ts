@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface TableHeaderCellProps extends BsPrefixProps, React.TableHTMLAttributes<HTMLTableCellElement> {
+}
+export declare const TableHeaderCell: BsPrefixRefForwardingComponent<'th', TableHeaderCellProps>;
+export default TableHeaderCell;

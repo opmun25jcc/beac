@@ -1,0 +1,23 @@
+import * as React from 'react';
+import { ColProps } from '../Col/Col';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+interface FormLabelBaseProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /**
+     * Uses `controlId` from `<FormGroup>` if not explicitly specified.
+     */
+    htmlFor?: string;
+    /**
+     * Hides the label visually while still allowing it to be
+     * read by assistive technologies.
+     */
+    visuallyHidden?: boolean;
+}
+export interface FormLabelOwnProps extends FormLabelBaseProps {
+    column?: false;
+}
+export interface FormLabelWithColProps extends FormLabelBaseProps, ColProps {
+    column: true | 'sm' | 'lg';
+}
+export type FormLabelProps = FormLabelWithColProps | FormLabelOwnProps;
+export declare const FormLabel: BsPrefixRefForwardingComponent<'label', FormLabelProps>;
+export default FormLabel;

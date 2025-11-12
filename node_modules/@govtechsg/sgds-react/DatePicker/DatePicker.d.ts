@@ -1,0 +1,50 @@
+import { BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { ButtonVariant } from '../utils/types';
+import { RangeSelectionValue, CalendarPlacement, DateFormat } from './types';
+export interface DatePickerProps {
+    /** Changes DatePicker to single date selection or range date selection */
+    mode?: 'single' | 'range';
+    /**Provides the date context for Calendar to present the appropriate view. If `initialValue` is used, `displayDate` should be synced with it */
+    displayDate?: Date;
+    /** The initial value of DatePicker on first load. When used, ensure that the type is consistent with the `mode` used */
+    initialValue?: Date | RangeSelectionValue;
+    /**When true, adds required attribute to Form Control input element */
+    required?: boolean;
+    /** Class name passed to the FormControl input element */
+    className?: string;
+    /** ISO date string to set the lowest allowable date value. e.g. "2016-05-19T12:00:00.000Z" */
+    minDate?: string;
+    /** ISO date string to set the highest allowable date value. e.g. "2016-05-19T12:00:00.000Z" */
+    maxDate?: string;
+    /** Placeholder text on input control. Default differs depending on mode */
+    placeholder?: string;
+    /** The onChange handler for DatePicker */
+    onChangeDate?: (value: Date | RangeSelectionValue | undefined) => void;
+    /** Clear callback function */
+    onClear?: Function;
+    /** The onError handler for DatePicker */
+    onError?: Function;
+    /** Feedback text for error state when date input is invalid */
+    invalidFeedback?: string;
+    /** Disables the Form Control and Button of Datepicker */
+    disabled?: boolean;
+    /** Overlay placement for the popover calendar */
+    calendarPlacement?: CalendarPlacement;
+    /** Date format reflected on input */
+    dateFormat?: DateFormat;
+    /** Forwards the id to InputGroup of DatePicker */
+    id?: string;
+    /** When true, flips Calendar Overlay when placement does not fit */
+    flip?: boolean;
+    /** Customize clear button variant colour */
+    clearBtnVariant?: ButtonVariant;
+}
+export declare const makeInputValueString: (date: Date | undefined, dateFormat: DateFormat) => string;
+export declare const isValidDate: (date: string, dateFormat: DateFormat) => boolean;
+export declare const arrangeDateRange: (date1: Date, date2: Date, dateFormat: DateFormat) => {
+    start: Date;
+    end: Date;
+    inputDate: string;
+};
+export declare const DatePicker: BsPrefixRefForwardingComponent<'input', DatePickerProps>;
+export default DatePicker;

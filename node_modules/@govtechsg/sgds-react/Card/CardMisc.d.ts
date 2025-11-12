@@ -1,0 +1,10 @@
+/// <reference types="react" />
+export declare const CardTitle: import("../utils/helpers").BsPrefixRefForwardingComponent<"h3", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardSubtitle: import("../utils/helpers").BsPrefixRefForwardingComponent<import("react").ForwardRefExoticComponent<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & import("react").RefAttributes<HTMLDivElement>>, import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardLink: import("../utils/helpers").BsPrefixRefForwardingComponent<"a", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardStretchedLink: import("../utils/helpers").BsPrefixRefForwardingComponent<"a", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardText: import("../utils/helpers").BsPrefixRefForwardingComponent<"p", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardFooter: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardImgOverlay: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardUnit: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const CardBody: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;

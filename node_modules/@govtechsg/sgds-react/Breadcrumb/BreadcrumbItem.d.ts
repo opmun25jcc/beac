@@ -1,0 +1,31 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface BreadcrumbItemProps extends BsPrefixProps, Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+    /**
+     * Adds a visual "active" state to a Breadcrumb
+     * Item and disables the link.
+     */
+    active?: boolean;
+    /**
+     * `href` attribute for the inner `a` element
+     */
+    href?: string;
+    /**
+     * You can use a custom element type for this component's inner link.
+     */
+    linkAs?: React.ElementType;
+    /**
+     * `target` attribute for the inner `a` element
+     */
+    target?: string;
+    /**
+     * `title` attribute for the inner `a` element
+     */
+    title?: React.ReactNode;
+    /**
+     * Additional props passed as-is to the underlying link for non-active items.
+     */
+    linkProps?: Record<string, any>;
+}
+export declare const BreadcrumbItem: BsPrefixRefForwardingComponent<'li', BreadcrumbItemProps>;
+export default BreadcrumbItem;

@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface TableBodyProps extends BsPrefixProps, React.TableHTMLAttributes<HTMLTableSectionElement> {
+}
+export declare const TableBody: BsPrefixRefForwardingComponent<'tbody', TableBodyProps>;
+export default TableBody;

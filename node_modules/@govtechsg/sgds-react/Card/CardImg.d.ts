@@ -1,0 +1,8 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface CardImgProps extends BsPrefixProps, React.ImgHTMLAttributes<HTMLImageElement> {
+    /** Defines image position inside the card*/
+    variant?: 'top' | 'bottom';
+}
+export declare const CardImg: BsPrefixRefForwardingComponent<'img', CardImgProps>;
+export default CardImg;

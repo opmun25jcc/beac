@@ -1,0 +1,43 @@
+import * as React from 'react';
+import { DropdownProps as BaseDropdownProps } from '@restart/ui/Dropdown';
+import { DropDirection } from './DropdownContext';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { AlignDirection } from '../utils/types';
+export interface DropdownProps extends BaseDropdownProps, BsPrefixProps, Omit<React.HTMLAttributes<HTMLElement>, 'onSelect' | 'children'> {
+    /**
+     * Determines the direction and location of the Menu in relation to it's Toggle.
+     */
+    drop?: DropDirection;
+    /** Aligns the dropdown menu to the specified side of the Dropdown toggle */
+    align?: AlignDirection;
+    /**
+     * Allow Dropdown to flip in case of an overlapping on the reference element. For more information refer to
+     * Popper.js's flip [docs](https://popper.js.org/docs/v2/modifiers/flip/).
+     */
+    flip?: boolean;
+    /**
+     * Controls the focus behavior for when the Dropdown is opened. Set to
+     * `true` to always focus the first menu item, `keyboard` to focus only when
+     * navigating via the keyboard, or `false` to disable completely
+     *
+     * The Default behavior is `false` **unless** the Menu has a `role="menu"`
+     * where it will default to `keyboard` to match the recommended [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton).
+     */
+    focusFirstItemOnShow?: boolean | 'keyboard';
+    /** @private */
+    navbar?: boolean;
+    /**
+     * Controls the auto close behaviour of the dropdown when clicking outside of
+     * the button or the list.
+     */
+    autoClose?: boolean | 'outside' | 'inside';
+}
+declare const _default: BsPrefixRefForwardingComponent<"div", DropdownProps> & {
+    Toggle: BsPrefixRefForwardingComponent<"button", import("./DropdownToggle").DropdownToggleProps>;
+    Menu: BsPrefixRefForwardingComponent<"ul", import("./DropdownMenu").DropdownMenuProps>;
+    Item: BsPrefixRefForwardingComponent<import("@restart/ui/esm/types").DynamicRefForwardingComponent<React.ForwardRefExoticComponent<import("@restart/ui/esm/Button").ButtonProps & React.RefAttributes<HTMLElement>>, import("@restart/ui/Dropdown").DropdownItemProps>, import("./DropdownItem").DropdownItemProps>;
+    ItemText: BsPrefixRefForwardingComponent<"span", BsPrefixProps<React.ElementType<any>>>;
+    Divider: BsPrefixRefForwardingComponent<"hr", BsPrefixProps<React.ElementType<any>>>;
+    Header: BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+};
+export default _default;

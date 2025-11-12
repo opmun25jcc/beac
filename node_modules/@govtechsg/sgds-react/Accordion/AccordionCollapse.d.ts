@@ -1,0 +1,8 @@
+import { CollapseProps } from '../Collapse/Collapse';
+import { BsPrefixRefForwardingComponent, BsPrefixProps } from '../utils/helpers';
+export interface AccordionCollapseProps extends BsPrefixProps, CollapseProps {
+    /** A key that corresponds to the toggler that triggers this collapse's expand or collapse.*/
+    eventKey: string;
+}
+export declare const AccordionCollapse: BsPrefixRefForwardingComponent<'div', AccordionCollapseProps>;
+export default AccordionCollapse;

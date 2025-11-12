@@ -1,0 +1,10 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FormTextProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /**
+     * A convenience prop for add the `text-muted` class
+     */
+    muted?: boolean;
+}
+export declare const FormText: BsPrefixRefForwardingComponent<'small', FormTextProps>;
+export default FormText;

@@ -1,0 +1,13 @@
+import * as React from 'react';
+import { TooltipPlacement } from '../utils/types';
+export interface TooltipProps {
+    /** The placement of the Tooltip in relation to its target */
+    placement?: TooltipPlacement;
+    /** Types of Tooltip include clickable and hoverable */
+    type?: 'hover' | 'click';
+    /** The content to be displayed in the tooltip */
+    content: string;
+    children?: React.ReactNode;
+}
+export declare const Tooltip: React.FC<TooltipProps>;
+export default Tooltip;

@@ -1,0 +1,6 @@
+import { CollapseProps } from '../Collapse/Collapse';
+import { BsPrefixRefForwardingComponent, BsPrefixProps } from '../utils/helpers';
+export interface SideNavCollapseProps extends BsPrefixProps, CollapseProps {
+}
+export declare const SideNavCollapse: BsPrefixRefForwardingComponent<'div', SideNavCollapseProps>;
+export default SideNavCollapse;

@@ -1,0 +1,40 @@
+import * as React from 'react';
+import { DropdownProps } from '../Dropdown/Dropdown';
+import { DropdownMenuVariant } from '../Dropdown/DropdownMenu';
+import { BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { EventKey } from '@restart/ui/esm/types';
+export interface NavDropdownProps extends Omit<DropdownProps, 'title'> {
+    /** The content of the DropdownToggle.  */
+    title: React.ReactNode;
+    /** Disables the toggle NavLink  */
+    disabled?: boolean;
+    /** Style the toggle NavLink as active  */
+    active?: boolean;
+    /** An ARIA accessible role applied to the Menu component */
+    menuRole?: string;
+    /** Whether to render the dropdown menu in the DOM before the first time it is shown */
+    renderMenuOnMount?: boolean;
+    /**
+     *  Which event when fired outside the component will cause it to be closed.
+     *
+     * _see [DropdownMenu](#menu-props) for more details_
+     */
+    rootCloseEvent?: 'click' | 'mousedown';
+    /**
+     * Menu color variant.
+     *
+     * Omitting this will use the default light color.
+     */
+    menuVariant?: DropdownMenuVariant;
+    /** When true, applies mega menu stylings on dropdown menu */
+    isMegaMenu?: boolean;
+    /**Uniquely identifies the NavDropdown amongst its siblings, used to determine and control the active state of the parent Nav */
+    eventKey?: EventKey;
+}
+declare const _default: BsPrefixRefForwardingComponent<"li", NavDropdownProps> & {
+    Item: BsPrefixRefForwardingComponent<import("@restart/ui/esm/types").DynamicRefForwardingComponent<React.ForwardRefExoticComponent<import("@restart/ui/esm/Button").ButtonProps & React.RefAttributes<HTMLElement>>, import("@restart/ui/esm/DropdownItem").DropdownItemProps>, import("..").DropdownItemProps>;
+    ItemText: BsPrefixRefForwardingComponent<"span", import("../utils/helpers").BsPrefixProps<React.ElementType<any>>>;
+    Divider: BsPrefixRefForwardingComponent<"hr", import("../utils/helpers").BsPrefixProps<React.ElementType<any>>>;
+    Header: BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<React.ElementType<any>>>;
+};
+export default _default;

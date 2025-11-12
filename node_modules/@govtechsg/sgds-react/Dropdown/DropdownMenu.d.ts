@@ -1,0 +1,52 @@
+import * as React from 'react';
+import { UseDropdownMenuOptions } from '@restart/ui/DropdownMenu';
+import { SelectCallback } from '@restart/ui/types';
+import { DropDirection } from './DropdownContext';
+import { AlignType } from '../utils/types';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export type DropdownMenuVariant = 'dark' | string;
+export interface DropdownMenuProps extends BsPrefixProps, Omit<React.HTMLAttributes<HTMLElement>, 'onSelect'> {
+    /** Controls the visibility of the Dropdown menu  */
+    show?: boolean;
+    /** Whether to render the dropdown menu in the DOM before the first time it is shown */
+    renderOnMount?: boolean;
+    /** Have the dropdown switch to it's opposite placement when necessary to stay on screen. */
+    flip?: boolean;
+    /**
+     * Aligns the dropdown menu to the specified side of the container. You can also align
+     * the menu responsively for breakpoints starting at `sm` and up. The alignment
+     * direction will affect the specified breakpoint or larger.
+     *
+     * *Note: Using responsive alignment will disable Popper usage for positioning.*
+     *
+     * @type {"start"|"end"|{ sm: "start"|"end" }|{ md: "start"|"end" }|{ lg: "start"|"end" }|{ xl: "start"|"end"}|{ xxl: "start"|"end"} }
+     */
+    align?: AlignType;
+    /** Callback fired when selecting menu item
+     * `(eventKey: string | null, e: React.SyntheticEvent<unknown>) => void`
+     */
+    onSelect?: SelectCallback;
+    /**
+     * Which event when fired outside the component will cause it to be closed
+     *
+     * *Note: For custom dropdown components, you will have to pass the
+     * `rootCloseEvent` to `<RootCloseWrapper>` in your custom dropdown menu
+     * component ([similarly to how it is implemented in `<Dropdown.Menu>`](https://github.com/react-bootstrap/react-bootstrap/blob/v0.31.5/src/DropdownMenu.js#L115-L119)).*
+     */
+    rootCloseEvent?: 'click' | 'mousedown';
+    /**
+     * A set of popper options and props passed directly to Popper.
+     */
+    popperConfig?: UseDropdownMenuOptions['popperConfig'];
+    /**
+     * Menu color variant.
+     *
+     * Omitting this will use the default light color.
+     */
+    variant?: DropdownMenuVariant;
+    /** `@private` Provides context when used in NavDropdown component  */
+    isNav?: boolean;
+}
+export declare function getDropdownMenuPlacement(alignEnd: boolean, dropDirection?: DropDirection, isRTL?: boolean): "top-end" | "top-start" | "bottom-end" | "bottom-start" | "left-start" | "right-start" | "left-end" | "right-end";
+export declare const DropdownMenu: BsPrefixRefForwardingComponent<'ul', DropdownMenuProps>;
+export default DropdownMenu;

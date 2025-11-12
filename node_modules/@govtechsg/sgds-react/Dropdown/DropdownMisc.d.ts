@@ -1,0 +1,4 @@
+/// <reference types="react" />
+export declare const DropdownHeader: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const DropdownDivider: import("../utils/helpers").BsPrefixRefForwardingComponent<"hr", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export declare const DropdownItemText: import("../utils/helpers").BsPrefixRefForwardingComponent<"span", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;

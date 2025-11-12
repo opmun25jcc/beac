@@ -1,0 +1,19 @@
+import * as React from 'react';
+import { RangeSelectionValue } from "./types";
+interface CalendarProps extends React.HTMLAttributes<HTMLTableElement> {
+    selectedDate: Date | RangeSelectionValue | undefined;
+    displayDate: Date;
+    minDate?: string;
+    maxDate?: string;
+    changeDate: (date: Date) => void;
+    mode: 'single' | 'range';
+    show: boolean;
+    dayRefs: React.RefObject<(HTMLTableCellElement | null)[]>;
+    onChangeMonth: (date: Date) => void;
+    handleTabPressOnCalendarBody: (event: React.KeyboardEvent<HTMLElement>) => void;
+}
+export declare const DAY_LABELS: string[];
+export declare const daysInMonth: number[];
+export declare const setTimeToNoon: (date: Date) => Date;
+export declare const Calendar: React.ForwardRefExoticComponent<CalendarProps & React.RefAttributes<HTMLTableElement>>;
+export default Calendar;

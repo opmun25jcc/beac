@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface CardHeaderProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+}
+export declare const CardHeader: BsPrefixRefForwardingComponent<'div', CardHeaderProps>;
+export default CardHeader;

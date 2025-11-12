@@ -1,0 +1,8 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FormControlGroupProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /** Pass in custom icon element of your choice. Required field*/
+    icon: React.ReactElement;
+}
+export declare const FormControlGroup: BsPrefixRefForwardingComponent<'div', FormControlGroupProps>;
+export default FormControlGroup;

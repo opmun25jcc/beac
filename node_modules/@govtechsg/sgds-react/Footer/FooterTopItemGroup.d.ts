@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FooterTopItemGroupProps extends BsPrefixProps, React.HTMLAttributes<HTMLDivElement> {
+}
+export declare const FooterTopItemGroup: BsPrefixRefForwardingComponent<'div', FooterTopItemGroupProps>;
+export default FooterTopItemGroup;

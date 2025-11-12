@@ -1,0 +1,11 @@
+import * as React from 'react';
+import { Placement } from '../utils/types';
+import { BsPrefixProps } from '../utils/helpers';
+export interface TooltipBoxProps extends React.HTMLAttributes<HTMLDivElement>, BsPrefixProps {
+    placement?: Placement;
+    show?: boolean;
+    popper?: any;
+    closeBtn?: JSX.Element;
+}
+declare const TooltipBox: React.ForwardRefExoticComponent<TooltipBoxProps & React.RefAttributes<HTMLDivElement>>;
+export default TooltipBox;

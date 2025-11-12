@@ -1,0 +1,10 @@
+import * as React from 'react';
+import { BsPrefixRefForwardingComponent, BsPrefixProps } from '../utils/helpers';
+export interface SideNavItemProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /**
+     * A unique key used to control this item's collapse/expand.
+     */
+    eventKey: string;
+}
+export declare const SideNavItem: BsPrefixRefForwardingComponent<'li', SideNavItemProps>;
+export default SideNavItem;

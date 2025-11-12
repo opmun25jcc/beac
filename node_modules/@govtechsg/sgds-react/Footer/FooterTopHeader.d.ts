@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FooterTopHeaderProps extends BsPrefixProps, React.HTMLAttributes<HTMLDivElement> {
+    /** The title of FooterTopHeader */
+    headerTitle?: React.ReactNode;
+    /** Forwards css className to .title of FooterTopHeader */
+    titleClass?: string;
+    /** Forwards css className to .description of FooterTopHeader */
+    descriptionClass?: string;
+    /** Forwards css className to .col of FooterTopHeader */
+    columnClass?: string;
+}
+export declare const FooterTopHeader: BsPrefixRefForwardingComponent<'div', FooterTopHeaderProps>;
+export default FooterTopHeader;

@@ -1,0 +1,33 @@
+import * as React from 'react';
+import { SideNavEventKey, SideNavSelectCallback } from './SideNavContext';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface SideNavProps extends Omit<React.HTMLAttributes<HTMLElement>, 'onSelect'>, BsPrefixProps {
+    /** The current active key that corresponds to the currently expanded card */
+    activeKey?: SideNavEventKey;
+    /**The current active SideNavLink. Its value should point to one of the `eventKey` value of SideNavLink */
+    activeNavLinkKey?: string;
+    /** The default active key that sets an sidenav item to be expanded on start, value should correspond to assigned `eventKey` prop */
+    defaultActiveKey?: SideNavEventKey;
+    /**
+     * A callback fired when a descendant of a child `<SideNav>` is selected.
+     *
+     * ```js
+     * function (
+     *  eventKey: string | string[] | null | undefined,
+     *  event?: SyntheticEvent
+     * )
+     * ```
+     */
+    onSelect?: SideNavSelectCallback;
+    /** Allow accordion items to stay open when another item is opened */
+    alwaysOpen?: boolean;
+    /** Apply position sticky to the sidenav with a default top and max-height so that sidenav sticks during scrolling */
+    sticky?: boolean;
+}
+declare const _default: BsPrefixRefForwardingComponent<"ul", SideNavProps> & {
+    Button: BsPrefixRefForwardingComponent<"button", import("./SideNavButton").SideNavButtonProps>;
+    Collapse: BsPrefixRefForwardingComponent<"div", import("./SideNavCollapse").SideNavCollapseProps>;
+    Item: BsPrefixRefForwardingComponent<"li", import("./SideNavItem").SideNavItemProps>;
+    Link: BsPrefixRefForwardingComponent<"a", import("./SideNavLink").SideNavLinkProps>;
+};
+export default _default;

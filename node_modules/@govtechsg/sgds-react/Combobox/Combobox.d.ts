@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { FormControlProps } from '../Form/FormControl';
+import { BsPrefixRefForwardingComponent } from '../utils/helpers';
+export type MenuPlacement = 'up' | 'down';
+export type CustomFilter = (inputValue: string, menuItems: string[]) => string[];
+export interface ComboboxProps extends Omit<FormControlProps, 'type'> {
+    /**Initial value of input */
+    initialValue?: string;
+    /** Placement of menu in relation to input */
+    menuPlacement?: MenuPlacement;
+    /** Array of values to pass into menu */
+    menuList: string[];
+    /** The onChange handler for Combobox's input change */
+    onChangeInput?: (val: string, e?: React.ChangeEvent<HTMLInputElement> | React.MouseEvent<HTMLLIElement>) => void;
+    /** Adds a FormLabel to `<Combobox />` */
+    label?: string;
+    /** Adds icon defined to FormControl */
+    icon?: React.ReactElement;
+    /** Enable y-axis scrolling of a menu with a default max-height of 480px */
+    scrollable?: boolean;
+    /** Filter method of the combobox. Defaults to 'startsWith'. Applying custom filter function to apply your custom logic filter
+     * `type CustomFilter = (inputValue: string, menuItems: string[]) => string[]`
+    */
+    filterMethod?: 'startsWith' | 'includes' | CustomFilter;
+}
+export declare const Combobox: BsPrefixRefForwardingComponent<'input', ComboboxProps>;
+export default Combobox;

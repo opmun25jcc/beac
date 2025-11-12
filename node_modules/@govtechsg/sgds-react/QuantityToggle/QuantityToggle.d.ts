@@ -1,0 +1,19 @@
+import * as React from 'react';
+import { BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { ButtonVariant } from '../utils/types';
+export interface QuantityToggleProps {
+    /** Controls the incremental / decremental value */
+    step?: number;
+    /** Controls the size of the QuantityToggle */
+    size?: 'sm' | 'lg';
+    /**Keep tracks of input value. This parameter should be passed down from parent with `setCount` */
+    count: number;
+    /**Updates the count value in Parent component. This parameter should be passed down from parent with `count` */
+    setCount: React.Dispatch<React.SetStateAction<number>>;
+    /** Disables the buttons and input of `QuantityToggle` */
+    disabled?: boolean;
+    /**Controls the color of the buttons */
+    variant?: ButtonVariant;
+}
+export declare const QuantityToggle: BsPrefixRefForwardingComponent<'input', QuantityToggleProps>;
+export default QuantityToggle;

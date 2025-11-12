@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface TableRowProps extends BsPrefixProps, React.TableHTMLAttributes<HTMLTableRowElement> {
+}
+export declare const TableRow: BsPrefixRefForwardingComponent<'tr', TableRowProps>;
+export default TableRow;

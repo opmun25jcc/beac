@@ -1,0 +1,7 @@
+const SM = 576;
+const MD = 768;
+const LG = 992;
+const XL = 1200;
+const XXL = 1400;
+
+export { LG, MD, SM, XL, XXL };

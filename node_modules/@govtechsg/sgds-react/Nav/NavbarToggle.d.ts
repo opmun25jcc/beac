@@ -1,0 +1,8 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface NavbarToggleProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /** An accessible ARIA label for the toggler button. */
+    label?: string;
+}
+export declare const NavbarToggle: BsPrefixRefForwardingComponent<'button', NavbarToggleProps>;
+export default NavbarToggle;

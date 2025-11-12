@@ -1,0 +1,18 @@
+import * as React from 'react';
+import { RangeSelectionValue } from './types';
+export interface YearViewProps extends React.HTMLAttributes<HTMLElement> {
+    selectedDate: Date | RangeSelectionValue | undefined;
+    displayDate: Date;
+    onClickYear: Function;
+    show: boolean;
+    yearRefs: React.RefObject<(HTMLButtonElement | null)[]>;
+    onChangeMonth: (date: Date) => void;
+    handleTabPressOnCalendarBody: (event: React.KeyboardEvent<HTMLElement>) => void;
+}
+export declare const findIndexByYear: (year: string, yearRefs: React.RefObject<(HTMLButtonElement | null)[]>) => number;
+export declare const calculateYearRange: (displayDate: Date) => {
+    startLimit: number;
+    endLimit: number;
+};
+export declare const YearView: React.ForwardRefExoticComponent<YearViewProps & React.RefAttributes<HTMLDivElement>>;
+export default YearView;

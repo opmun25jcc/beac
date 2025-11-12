@@ -1,0 +1,24 @@
+'use client';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import classNames from 'classnames';
+
+const propTypes = {
+    'aria-label': PropTypes.string,
+    onClick: PropTypes.func,
+    /**
+     * Render different color variant for the button.
+     *
+     * Omitting this will render the default dark color.
+     */
+    variant: PropTypes.oneOf(['white']),
+};
+const defaultProps = {
+    'aria-label': 'Close',
+};
+const CloseButton = React.forwardRef(({ className, variant, ...props }, ref) => (React.createElement("button", { ref: ref, type: "button", className: classNames('btn-close', variant && `btn-close-${variant}`, className), ...props })));
+CloseButton.displayName = 'CloseButton';
+CloseButton.propTypes = propTypes;
+CloseButton.defaultProps = defaultProps;
+
+export { CloseButton };

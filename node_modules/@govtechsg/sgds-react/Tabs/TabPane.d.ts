@@ -1,0 +1,30 @@
+import * as React from 'react';
+import { EventKey, TransitionCallbacks } from '@restart/ui/types';
+import { BsPrefixProps, BsPrefixRefForwardingComponent, TransitionType } from '../utils/helpers';
+export interface TabPaneProps extends TransitionCallbacks, BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /**
+     * A key that associates the `TabPane` with it's controlling `NavLink`.
+     */
+    eventKey?: EventKey;
+    /**
+     * Toggles the active state of the TabPane, this is generally controlled by a
+     * TabContainer.
+     */
+    active?: boolean;
+    /**
+     * Use animation when showing or hiding `<TabPane>`s. Defaults to `<Fade>`
+     * animation, else use `false` to disable or a react-transition-group
+     * `<Transition/>` component.
+     */
+    transition?: TransitionType;
+    /**
+     * Wait until the first "enter" transition to mount the tab (add it to the DOM)
+     */
+    mountOnEnter?: boolean;
+    /**
+     * Unmount the tab (remove it from the DOM) when it is no longer visible
+     */
+    unmountOnExit?: boolean;
+}
+export declare const TabPane: BsPrefixRefForwardingComponent<'div', TabPaneProps>;
+export default TabPane;

@@ -1,0 +1,44 @@
+import * as React from 'react';
+import { BsPrefixOnlyProps } from '../utils/helpers';
+export interface TableProps extends BsPrefixOnlyProps, React.TableHTMLAttributes<HTMLTableElement> {
+    /**
+     * Adds zebra-striping to any table row within the `<tbody>`.
+     */
+    striped?: boolean;
+    /**
+     * Adds borders on all sides of the table and cells.
+     */
+    bordered?: boolean;
+    /**
+     * Removes all borders on the table and cells, including table header.
+     */
+    borderless?: boolean;
+    /**
+     * Enable a hover state on table rows within a `<tbody>`.
+     */
+    hover?: boolean;
+    /**
+     * Make tables more compact by cutting cell padding in half by setting
+     * size as `sm`.
+     */
+    size?: string;
+    /**
+     * Invert the colors of the table — with light text on dark backgrounds
+     * by setting variant as `dark`.
+     */
+    variant?: string;
+    /**
+     * Allow tables to be scrolled horizontally with ease. Across every breakpoint, use responsive for horizontally scrolling tables. Responsive tables are wrapped automatically in a div. Use `responsive="sm"`, `responsive="md"`, `responsive="lg"`, or `responsive="xl"` as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally. \n\n Alternatively, set boolean to `true` instead to make it always responsive throughout breakpoints.\n',
+     */
+    responsive?: boolean | string;
+}
+export declare const Table: React.ForwardRefExoticComponent<TableProps & React.RefAttributes<HTMLTableElement>>;
+declare const _default: React.ForwardRefExoticComponent<TableProps & React.RefAttributes<HTMLTableElement>> & {
+    Row: import("../utils/helpers").BsPrefixRefForwardingComponent<"tr", import("./TableRow").TableRowProps>;
+    Header: import("../utils/helpers").BsPrefixRefForwardingComponent<"thead", import("./TableHeader").TableHeaderProps>;
+    HeaderCell: import("../utils/helpers").BsPrefixRefForwardingComponent<"th", import("./TableHeaderCell").TableHeaderCellProps>;
+    SortLabel: import("../utils/helpers").BsPrefixRefForwardingComponent<"span", import("./TableSortLabel").TableSortLabelProps>;
+    Body: import("../utils/helpers").BsPrefixRefForwardingComponent<"tbody", import("./TableBody").TableBodyProps>;
+    DataCell: import("../utils/helpers").BsPrefixRefForwardingComponent<"td", import("./TableDataCell").TableDataCellProps>;
+};
+export default _default;

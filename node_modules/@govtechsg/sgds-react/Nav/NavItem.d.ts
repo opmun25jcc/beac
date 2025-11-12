@@ -1,0 +1,3 @@
+/// <reference types="react" />
+export declare const NavItem: import("../utils/helpers").BsPrefixRefForwardingComponent<"li", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export default NavItem;

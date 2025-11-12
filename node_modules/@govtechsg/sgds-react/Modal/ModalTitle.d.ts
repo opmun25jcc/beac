@@ -1,0 +1,3 @@
+/// <reference types="react" />
+export declare const ModalTitle: import("../utils/helpers").BsPrefixRefForwardingComponent<"h3", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export default ModalTitle;

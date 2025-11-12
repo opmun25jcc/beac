@@ -1,0 +1,8 @@
+import { NavLinkProps } from '../Nav/NavLink';
+import { BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface SideNavLinkProps extends Omit<NavLinkProps, 'eventKey'> {
+    /** A unique key for SideNavLink */
+    eventKey: string;
+}
+export declare const SideNavLink: BsPrefixRefForwardingComponent<'a', SideNavLinkProps>;
+export default SideNavLink;

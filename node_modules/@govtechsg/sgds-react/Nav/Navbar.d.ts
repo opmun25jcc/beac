@@ -1,0 +1,62 @@
+import * as React from 'react';
+import { SelectCallback } from '@restart/ui/types';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { Size } from '../utils/types';
+export interface NavbarProps extends BsPrefixProps, Omit<React.HTMLAttributes<HTMLElement>, 'onSelect'> {
+    /**
+     * The breakpoint, below which, the Navbar will collapse.
+     * When `true` the Navbar will always be expanded regardless of screen size.
+     */
+    expand?: boolean | Size;
+    /**
+     * Sets the background colour of navbar. A convenience prop for adding `bg-*` utility classes since they are so commonly used here.
+     * `light` and `dark` are common choices but any `bg-*` class is supported, including any custom ones you might define.
+     *
+     * Pairs nicely with the `variant` prop.
+     */
+    bg?: string;
+    /**
+     * Create a fixed navbar along the top or bottom of the screen, that scrolls with the
+     * page. A convenience prop for the `fixed-*` positioning classes.
+     */
+    fixed?: 'top' | 'bottom';
+    /**
+     * Position the navbar at the top of the viewport, but only after scrolling past it.
+     * A convenience prop for the `sticky-top` positioning class.
+     *
+     *  __Not supported in <= IE11 and other older browsers without a polyfill__
+     */
+    sticky?: 'top';
+    /**
+     * A callback fired when the `<Navbar>` body collapses or expands. Fired when
+     * a `<Navbar.Toggle>` is clicked and called with the new `expanded`
+     * boolean value.
+     *
+     * @controllable expanded
+     */
+    onToggle?: (expanded: boolean) => void;
+    /**
+     * A callback fired when a descendant of a child `<Nav>` is selected.
+     *
+     * ```js
+     * function (
+     *  eventKey: mixed,
+     *  event?: SyntheticEvent
+     * )
+     * ```
+     */
+    onSelect?: SelectCallback;
+    /** When true and in hamburger state, the Navbar collapses on selection of its items' */
+    collapseOnSelect?: boolean;
+    /** When true and in hamburger state, Navbar body is visible */
+    expanded?: boolean;
+    /** When true adds a border-bottom to Navbar   */
+    hasBorderBottom?: boolean;
+}
+declare const _default: BsPrefixRefForwardingComponent<"nav", NavbarProps> & {
+    Brand: BsPrefixRefForwardingComponent<"a", import("./NavbarBrand").NavbarBrandProps>;
+    Collapse: React.ForwardRefExoticComponent<import("./NavbarCollapse").NavbarCollapseProps & React.RefAttributes<HTMLDivElement>>;
+    Text: BsPrefixRefForwardingComponent<"span", BsPrefixProps<React.ElementType<any>>>;
+    Toggle: BsPrefixRefForwardingComponent<"button", import("./NavbarToggle").NavbarToggleProps>;
+};
+export default _default;

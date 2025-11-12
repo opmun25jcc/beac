@@ -1,0 +1,6 @@
+import BaseDropdownItem, { DropdownItemProps as BaseDropdownItemProps } from '@restart/ui/DropdownItem';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface DropdownItemProps extends BaseDropdownItemProps, BsPrefixProps {
+}
+export declare const DropdownItem: BsPrefixRefForwardingComponent<typeof BaseDropdownItem, DropdownItemProps>;
+export default DropdownItem;

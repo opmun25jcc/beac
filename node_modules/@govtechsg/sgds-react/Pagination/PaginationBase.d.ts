@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { BsPrefixProps } from '../utils/helpers';
+export interface PaginationBaseProps extends BsPrefixProps, React.HTMLAttributes<HTMLUListElement> {
+    size?: 'sm' | 'md' | 'lg';
+}
+declare const _default: React.ForwardRefExoticComponent<PaginationBaseProps & React.RefAttributes<HTMLUListElement>> & {
+    First: React.ForwardRefExoticComponent<import("./PageItem").PageItemProps & React.RefAttributes<unknown>>;
+    Prev: React.ForwardRefExoticComponent<import("./PageItem").PageItemProps & React.RefAttributes<unknown>>;
+    Ellipsis: React.ForwardRefExoticComponent<import("./PageItem").PageItemProps & React.RefAttributes<unknown>>;
+    Item: import("../utils/helpers").BsPrefixRefForwardingComponent<"li", import("./PageItem").PageItemProps>;
+    Next: React.ForwardRefExoticComponent<import("./PageItem").PageItemProps & React.RefAttributes<unknown>>;
+    Last: React.ForwardRefExoticComponent<import("./PageItem").PageItemProps & React.RefAttributes<unknown>>;
+};
+export default _default;

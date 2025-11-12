@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixRefForwardingComponent, BsPrefixProps } from '../utils/helpers';
+export interface AccordionBodyProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+}
+export declare const AccordionBody: BsPrefixRefForwardingComponent<'div', AccordionBodyProps>;
+export default AccordionBody;

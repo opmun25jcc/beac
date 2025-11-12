@@ -1,0 +1,19 @@
+import * as React from 'react';
+import { FormControlProps } from '../Form/FormControl';
+import { BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { DateFormat } from './types';
+export interface DateInputProps extends Omit<FormControlProps, 'type'> {
+    as?: React.ElementType;
+    required?: boolean | undefined;
+    isRange: boolean;
+    inputDate?: string;
+    isInvalid: boolean;
+    dateFormat: DateFormat;
+    validateDateInput: () => void;
+    enterDateRange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    enterDateSingle: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+type DateInputPropsComponent = BsPrefixRefForwardingComponent<'input', DateInputProps>;
+export declare const getMaskedDateFormat: (isRange: boolean, dateFormat: DateFormat) => string;
+export declare const DateInput: DateInputPropsComponent;
+export default DateInput;

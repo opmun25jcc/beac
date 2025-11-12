@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { RangeSelectionValue } from './types';
+export interface MonthViewProps extends React.HTMLAttributes<HTMLElement> {
+    selectedDate: Date | RangeSelectionValue | undefined;
+    displayDate: Date;
+    onClickMonth: Function;
+    show: boolean;
+    monthRefs: React.RefObject<(HTMLButtonElement | null)[]>;
+    onChangeMonth: (date: Date) => void;
+    handleTabPressOnCalendarBody: (event: React.KeyboardEvent<HTMLElement>) => void;
+}
+export declare const MONTH_LABELS: string[];
+export declare const MonthView: React.ForwardRefExoticComponent<MonthViewProps & React.RefAttributes<HTMLDivElement>>;
+export default MonthView;

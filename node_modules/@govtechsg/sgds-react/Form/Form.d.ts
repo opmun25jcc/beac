@@ -1,0 +1,31 @@
+import * as React from 'react';
+import { BsPrefixRefForwardingComponent, AsProp } from '../utils/helpers';
+export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement>, AsProp {
+    /**
+     * Mark a form as having been validated. Setting it to `true` will
+     * toggle any validation styles on the forms elements.
+     */
+    validated?: boolean;
+}
+declare const _default: BsPrefixRefForwardingComponent<"form", FormProps> & {
+    Group: BsPrefixRefForwardingComponent<"div", import("./FormGroup").FormGroupProps>;
+    Control: BsPrefixRefForwardingComponent<"input", import("./FormControl").FormControlProps> & {
+        Feedback: BsPrefixRefForwardingComponent<"div", import("./Feedback").FeedbackProps>;
+        Group: BsPrefixRefForwardingComponent<"div", import("./FormControlGroup").FormControlGroupProps>;
+    };
+    Check: BsPrefixRefForwardingComponent<"input", import("./FormCheck").FormCheckProps> & {
+        Input: BsPrefixRefForwardingComponent<"input", import("./FormCheckInput").FormCheckInputProps>;
+        Label: React.ForwardRefExoticComponent<import("./FormCheckLabel").FormCheckLabelProps & React.RefAttributes<HTMLLabelElement>>;
+    };
+    Switch: BsPrefixRefForwardingComponent<BsPrefixRefForwardingComponent<"input", import("./FormCheck").FormCheckProps> & {
+        Input: BsPrefixRefForwardingComponent<"input", import("./FormCheckInput").FormCheckInputProps>;
+        Label: React.ForwardRefExoticComponent<import("./FormCheckLabel").FormCheckLabelProps & React.RefAttributes<HTMLLabelElement>>;
+    }, import("./Switch").SwitchProps> & {
+        Input: BsPrefixRefForwardingComponent<"input", import("./FormCheckInput").FormCheckInputProps>;
+        Label: React.ForwardRefExoticComponent<import("./FormCheckLabel").FormCheckLabelProps & React.RefAttributes<HTMLLabelElement>>;
+    };
+    Label: BsPrefixRefForwardingComponent<"label", import("./FormLabel").FormLabelProps>;
+    Text: BsPrefixRefForwardingComponent<"small", import("./FormText").FormTextProps>;
+    Select: BsPrefixRefForwardingComponent<"select", import("./FormSelect").FormSelectProps>;
+};
+export default _default;

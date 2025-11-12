@@ -1,0 +1,39 @@
+import * as React from 'react';
+import { ButtonType } from '@restart/ui/Button';
+import { DropdownProps } from '../Dropdown/Dropdown';
+import { PropsFromToggle } from '../Dropdown/DropdownToggle';
+import { BsPrefixProps } from '../utils/helpers';
+export interface SplitButtonProps extends Omit<DropdownProps, 'title'>, PropsFromToggle, BsPrefixProps {
+    /** An ARIA accessible role applied to the Menu component. When set to 'menu', The dropdown */
+    menuRole?: string;
+    /** Whether to render the dropdown menu in the DOM before the first time it is shown */
+    renderMenuOnMount?: boolean;
+    /**
+     *  Which event when fired outside the component will cause it to be closed.
+     *
+     * _see [DropdownMenu](#dropdown-menu-props) for more details_
+     */
+    rootCloseEvent?: 'click' | 'mousedown';
+    /** An anchor `target` passed to the non-toggle Button */
+    target?: string;
+    /** The content of the non-toggle Button.  */
+    title: React.ReactNode;
+    /**
+     * Accessible label for the toggle; the value of `title` if not specified.
+     */
+    toggleLabel?: string;
+    /** A `type` passed to the non-toggle Button */
+    type?: ButtonType;
+}
+/**
+ * A convenience component for simple or general use split button dropdowns. Renders a
+ * `ButtonGroup` containing a `Button` and a `Button` toggle for the `Dropdown`. All `children`
+ * are passed directly to the default `Dropdown.Menu`. This component accepts all of [`Dropdown`'s
+ * props](#dropdown-props).
+ *
+ * _All unknown props are passed through to the `Dropdown` component._
+ * The Button `variant`, `size` and `bsPrefix` props are passed to the button and toggle,
+ * and menu-related props are passed to the `Dropdown.Menu`
+ */
+declare const SplitButton: React.ForwardRefExoticComponent<SplitButtonProps & React.RefAttributes<HTMLElement>>;
+export default SplitButton;

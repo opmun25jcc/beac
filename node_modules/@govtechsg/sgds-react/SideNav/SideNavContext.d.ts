@@ -1,0 +1,12 @@
+import * as React from 'react';
+export type SideNavEventKey = string | string[] | null | undefined;
+export declare type SideNavSelectCallback = (eventKey: SideNavEventKey, e: React.SyntheticEvent<unknown>) => void;
+export interface SideNavContextValue {
+    activeEventKey?: SideNavEventKey;
+    onSelect?: SideNavSelectCallback;
+    alwaysOpen?: boolean;
+    activeLinkKey?: string;
+}
+export declare function isSideNavItemSelected(activeEventKey: SideNavEventKey, eventKey: string): boolean;
+declare const context: React.Context<SideNavContextValue>;
+export default context;

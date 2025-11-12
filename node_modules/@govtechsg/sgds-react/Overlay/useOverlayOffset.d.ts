@@ -1,0 +1,6 @@
+/// <reference types="react" />
+import { Options, Offset } from '@restart/ui/usePopper';
+export default function useOverlayOffset(customOffset?: Offset): [
+    React.RefObject<HTMLElement>,
+    Options['modifiers']
+];

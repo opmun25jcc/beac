@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface FooterBottomCopyrightsProps extends BsPrefixProps, React.HTMLAttributes<HTMLDivElement> {
+}
+export declare const FooterBottomCopyrights: BsPrefixRefForwardingComponent<'div', FooterBottomCopyrightsProps>;
+export default FooterBottomCopyrights;

@@ -1,0 +1,10 @@
+import ReactDOM from 'react-dom';
+
+function safeFindDOMNode(componentOrElement) {
+    if (componentOrElement && 'setState' in componentOrElement) {
+        return ReactDOM.findDOMNode(componentOrElement);
+    }
+    return (componentOrElement ?? null);
+}
+
+export { safeFindDOMNode as default };

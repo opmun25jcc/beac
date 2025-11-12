@@ -1,0 +1,3 @@
+/// <reference types="react" />
+declare const _default: import("../utils/helpers").BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;
+export default _default;

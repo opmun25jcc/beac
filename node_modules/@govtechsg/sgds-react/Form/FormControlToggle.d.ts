@@ -1,0 +1,11 @@
+import * as React from 'react';
+import { BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { FormControlProps } from './FormControl';
+export interface FormControlToggleProps extends Omit<FormControlProps, 'type'> {
+    as?: React.ElementType;
+    childBsPrefix?: string;
+    setIsMenuOpen?: Function;
+}
+type FormControlToggleComponent = BsPrefixRefForwardingComponent<'input', FormControlToggleProps>;
+declare const FormControlToggle: FormControlToggleComponent;
+export default FormControlToggle;

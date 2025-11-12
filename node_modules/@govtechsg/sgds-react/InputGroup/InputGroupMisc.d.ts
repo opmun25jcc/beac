@@ -1,0 +1,4 @@
+import { FormCheckInputProps } from '../Form/FormCheckInput';
+import * as React from 'react';
+export declare const InputGroupCheckbox: (props: FormCheckInputProps) => React.JSX.Element;
+export declare const InputGroupRadio: (props: FormCheckInputProps) => React.JSX.Element;

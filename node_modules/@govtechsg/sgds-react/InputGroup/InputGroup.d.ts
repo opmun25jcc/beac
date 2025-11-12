@@ -1,0 +1,30 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface InputGroupProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /**
+     * Control the size of buttons and form elements from the top-level.
+     *
+     */
+    size?: 'sm' | 'lg';
+    /** Handles the input's rounded corners when using form validation.
+     *  Use this when your input group contains both an input and feedback element.
+     * Refer to ***Input Group Validation***",
+     */
+    hasValidation?: boolean;
+    /** `@private` property used in  `<QuantityToggle/>` component
+     */
+    variant?: 'quantity-toggle';
+}
+/**
+ *
+ * @property {InputGroupText} Text
+ * @property {InputGroupRadio} Radio
+ * @property {InputGroupCheckbox} Checkbox
+ */
+export declare const InputGroup: BsPrefixRefForwardingComponent<'div', InputGroupProps>;
+declare const _default: BsPrefixRefForwardingComponent<"div", InputGroupProps> & {
+    Text: BsPrefixRefForwardingComponent<"span", BsPrefixProps<React.ElementType<any>>>;
+    Radio: (props: import("..").FormCheckInputProps) => React.JSX.Element;
+    Checkbox: (props: import("..").FormCheckInputProps) => React.JSX.Element;
+};
+export default _default;

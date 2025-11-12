@@ -1,0 +1,29 @@
+import * as React from 'react';
+import { NavProps as BaseNavProps } from '@restart/ui/Nav';
+import { EventKey } from '@restart/ui/types';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface NavProps extends BsPrefixProps, BaseNavProps {
+    /**
+     * The visual variant of the nav items.
+     */
+    variant?: 'tabs-basic-toggle' | 'tabs-info-toggle';
+    /**
+     * Enable vertical scrolling within the toggleable contents of a collapsed Navbar.
+     */
+    navbarScroll?: boolean;
+    /**
+     * The default active key that is selected on start.
+     */
+    defaultActiveKey?: EventKey;
+}
+declare const _default: BsPrefixRefForwardingComponent<"ul", NavProps> & {
+    Item: BsPrefixRefForwardingComponent<"li", BsPrefixProps<React.ElementType<any>>>;
+    Link: BsPrefixRefForwardingComponent<"a", import("./NavLink").NavLinkProps>;
+    Dropdown: BsPrefixRefForwardingComponent<"li", import("./NavDropdown").NavDropdownProps> & {
+        Item: BsPrefixRefForwardingComponent<import("@restart/ui/types").DynamicRefForwardingComponent<React.ForwardRefExoticComponent<import("@restart/ui/esm/Button").ButtonProps & React.RefAttributes<HTMLElement>>, import("@restart/ui/esm/DropdownItem").DropdownItemProps>, import("..").DropdownItemProps>;
+        ItemText: BsPrefixRefForwardingComponent<"span", BsPrefixProps<React.ElementType<any>>>;
+        Divider: BsPrefixRefForwardingComponent<"hr", BsPrefixProps<React.ElementType<any>>>;
+        Header: BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+    };
+};
+export default _default;

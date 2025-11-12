@@ -1,0 +1,6 @@
+import * as React from 'react';
+import { BsPrefixProps } from '../utils/helpers';
+export interface FormCheckLabelProps extends React.LabelHTMLAttributes<HTMLLabelElement>, BsPrefixProps {
+}
+export declare const FormCheckLabel: React.ForwardRefExoticComponent<FormCheckLabelProps & React.RefAttributes<HTMLLabelElement>>;
+export default FormCheckLabel;

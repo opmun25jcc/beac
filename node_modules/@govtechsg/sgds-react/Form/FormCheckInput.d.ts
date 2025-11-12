@@ -1,0 +1,13 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+type FormCheckInputType = 'checkbox' | 'radio';
+export interface FormCheckInputProps extends BsPrefixProps, React.InputHTMLAttributes<HTMLInputElement> {
+    /** The type of checkable. */
+    type?: FormCheckInputType;
+    /** Manually style the input as valid */
+    isValid?: boolean;
+    /** Manually style the input as invalid */
+    isInvalid?: boolean;
+}
+export declare const FormCheckInput: BsPrefixRefForwardingComponent<'input', FormCheckInputProps>;
+export default FormCheckInput;

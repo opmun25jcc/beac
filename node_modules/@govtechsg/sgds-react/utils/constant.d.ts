@@ -1,0 +1,5 @@
+export declare const SM = 576;
+export declare const MD = 768;
+export declare const LG = 992;
+export declare const XL = 1200;
+export declare const XXL = 1400;

@@ -1,0 +1,2 @@
+/// <reference types="react" />
+export declare const NavbarText: import("../utils/helpers").BsPrefixRefForwardingComponent<"span", import("../utils/helpers").BsPrefixProps<import("react").ElementType<any>>>;

@@ -1,0 +1,16 @@
+import * as React from 'react';
+
+class BsPrefixComponent extends React.Component {
+}
+function getOverlayDirection(placement, isRTL) {
+    let bsDirection = placement;
+    if (placement === 'left') {
+        bsDirection = isRTL ? 'end' : 'start';
+    }
+    else if (placement === 'right') {
+        bsDirection = isRTL ? 'start' : 'end';
+    }
+    return bsDirection;
+}
+
+export { BsPrefixComponent, getOverlayDirection };

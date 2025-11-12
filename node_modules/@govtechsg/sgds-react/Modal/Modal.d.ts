@@ -1,0 +1,59 @@
+import * as React from 'react';
+import { ModalProps as BaseModalProps } from '@restart/ui/Modal';
+import { ModalDialogProps } from './ModalDialog';
+import { BsPrefixOnlyProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface ModalProps extends Omit<BaseModalProps, 'role' | 'renderBackdrop' | 'renderDialog' | 'transition' | 'backdropTransition' | 'children'>, BsPrefixOnlyProps {
+    /**
+     * Render a large, extra large or small modal.
+     * When not provided, the modal is rendered with medium (default) size.
+     */
+    size?: 'sm' | 'lg' | 'xl';
+    /** Renders a fullscreen modal. Specifying a breakpoint will render the modal as fullscreen below the breakpoint size.*/
+    fullscreen?: true | 'sm-down' | 'md-down' | 'lg-down' | 'xl-down' | 'xxl-down';
+    /**
+     * vertically center the Dialog in the window
+     */
+    centered?: boolean;
+    /**
+     * Add an optional extra class name to .modal-backdrop
+     * It could end up looking like class="modal-backdrop foo-modal-backdrop in".
+     */
+    backdropClassName?: string;
+    /**
+     * Open and close the Modal with a slide and fade animation.
+     */
+    animation?: boolean;
+    /**
+     * A css class to apply to the Modal dialog DOM node.
+     */
+    dialogClassName?: string;
+    /**
+     * Add an optional extra class name to .modal-content
+     */
+    contentClassName?: string;
+    /**
+     * A Component type that provides the modal content Markup. This is a useful
+     * prop when you want to use your own styles and markup to create a custom
+     * modal component.
+     */
+    dialogAs?: React.ElementType;
+    /**
+     * Allows scrolling the `<Modal.Body>` instead of the entire Modal when overflowing.
+     */
+    scrollable?: boolean;
+    /**
+     * Conveys centered align style to Modal
+     */
+    centeredAlignVariant?: boolean;
+    [other: string]: any;
+}
+declare const _default: BsPrefixRefForwardingComponent<"div", ModalProps> & {
+    Body: BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<React.ElementType<any>>>;
+    Header: React.ForwardRefExoticComponent<import("./ModalHeader").ModalHeaderProps & React.RefAttributes<HTMLDivElement>>;
+    Title: BsPrefixRefForwardingComponent<"h3", import("../utils/helpers").BsPrefixProps<React.ElementType<any>>>;
+    Footer: BsPrefixRefForwardingComponent<"div", import("../utils/helpers").BsPrefixProps<React.ElementType<any>>>;
+    Dialog: React.ForwardRefExoticComponent<ModalDialogProps & React.RefAttributes<HTMLDivElement>>;
+    TRANSITION_DURATION: number;
+    BACKDROP_TRANSITION_DURATION: number;
+};
+export default _default;

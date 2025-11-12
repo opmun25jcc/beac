@@ -1,0 +1,18 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { Color, Variant } from '../utils/types';
+export interface BadgeProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /** Sets the background styling of the badge */
+    bg?: Variant;
+    /** Add the `pill` modifier to make badges more rounded with some additional horizontal padding. */
+    pill?: boolean;
+    /** Sets badge text color */
+    text?: Color;
+    /** Controls badge position to the corner of a Component and shape of badge is a circle. Use with Component as a wrapper with `.position-relative `css */
+    textIndicator?: boolean;
+    /**Controls badge position to the corner of a Component. Use with Component as a wrapper with `.position-relative `css */
+    dotIndicator?: boolean;
+    /** Sets the badge to a outlined style badge */
+    outlined?: boolean;
+}
+export declare const Badge: BsPrefixRefForwardingComponent<'span', BadgeProps>;

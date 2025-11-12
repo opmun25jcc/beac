@@ -1,0 +1,28 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+import { Color, Variant, CardVariant } from '../utils/types';
+export interface CardProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /** Sets card background */
+    bg?: Variant;
+    /** Sets card text color */
+    text?: Color;
+    /** Sets card border color */
+    border?: Variant;
+    /** Use on actionable cards like SelectableCard and Quantity Toggle Card' */
+    variant?: CardVariant;
+}
+export declare const Card: BsPrefixRefForwardingComponent<'div', CardProps>;
+declare const _default: BsPrefixRefForwardingComponent<"div", CardProps> & {
+    Img: BsPrefixRefForwardingComponent<"img", import("./CardImg").CardImgProps>;
+    Title: BsPrefixRefForwardingComponent<"h3", BsPrefixProps<React.ElementType<any>>>;
+    Subtitle: BsPrefixRefForwardingComponent<React.ForwardRefExoticComponent<Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>, BsPrefixProps<React.ElementType<any>>>;
+    Body: BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+    Link: BsPrefixRefForwardingComponent<"a", BsPrefixProps<React.ElementType<any>>>;
+    StretchedLink: BsPrefixRefForwardingComponent<"a", BsPrefixProps<React.ElementType<any>>>;
+    Text: BsPrefixRefForwardingComponent<"p", BsPrefixProps<React.ElementType<any>>>;
+    Header: BsPrefixRefForwardingComponent<"div", import("./CardHeader").CardHeaderProps>;
+    Footer: BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+    ImgOverlay: BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+    Unit: BsPrefixRefForwardingComponent<"div", BsPrefixProps<React.ElementType<any>>>;
+};
+export default _default;

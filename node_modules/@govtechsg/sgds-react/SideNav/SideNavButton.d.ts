@@ -1,0 +1,10 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+type EventHandler = React.EventHandler<React.SyntheticEvent>;
+export interface SideNavButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, BsPrefixProps {
+    /** Providing a `href` will render an `<a>` element, _styled_ as a button. */
+    href?: string;
+}
+export declare function useSideNavButton(eventKey: string, onClick?: EventHandler): EventHandler;
+export declare const SideNavButton: BsPrefixRefForwardingComponent<'button', SideNavButtonProps>;
+export default SideNavButton;

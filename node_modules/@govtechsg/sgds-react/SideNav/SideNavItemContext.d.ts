@@ -1,0 +1,6 @@
+import * as React from 'react';
+export interface SideNavItemContextValue {
+    eventKey: string;
+}
+declare const context: React.Context<SideNavItemContextValue>;
+export default context;

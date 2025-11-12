@@ -1,0 +1,13 @@
+import * as React from 'react';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface BreadcrumbProps extends BsPrefixProps, React.HTMLAttributes<HTMLElement> {
+    /**ARIA label for the nav element */
+    ariaLabel?: string;
+    /**An object which keys and value are passed down to `<ol />` as attribute name and value respectively */
+    listProps?: React.OlHTMLAttributes<HTMLOListElement>;
+}
+export declare const Breadcrumb: BsPrefixRefForwardingComponent<'nav', BreadcrumbProps>;
+declare const _default: BsPrefixRefForwardingComponent<"nav", BreadcrumbProps> & {
+    Item: BsPrefixRefForwardingComponent<"li", import("./BreadcrumbItem").BreadcrumbItemProps>;
+};
+export default _default;

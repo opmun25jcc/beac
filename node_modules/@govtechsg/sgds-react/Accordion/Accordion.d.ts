@@ -1,0 +1,22 @@
+import * as React from 'react';
+import { AccordionSelectCallback, AccordionEventKey } from './AccordionContext';
+import { BsPrefixProps, BsPrefixRefForwardingComponent } from '../utils/helpers';
+export interface AccordionProps extends Omit<React.HTMLAttributes<HTMLElement>, 'onSelect'>, BsPrefixProps {
+    /** The current active key that corresponds to the currently expanded card */
+    activeKey?: AccordionEventKey;
+    /** The default active key that is expanded on start */
+    defaultActiveKey?: AccordionEventKey;
+    onSelect?: AccordionSelectCallback;
+    /** Renders accordion edge-to-edge with its parent container */
+    flush?: boolean;
+    /** Allow accordion items to stay open when another item is opened */
+    alwaysOpen?: boolean;
+}
+declare const _default: BsPrefixRefForwardingComponent<"div", AccordionProps> & {
+    Button: BsPrefixRefForwardingComponent<"div", import("./AccordionButton").AccordionButtonProps>;
+    Collapse: BsPrefixRefForwardingComponent<"div", import("./AccordionCollapse").AccordionCollapseProps>;
+    Item: BsPrefixRefForwardingComponent<"div", import("./AccordionItem").AccordionItemProps>;
+    Header: BsPrefixRefForwardingComponent<"h2", import("./AccordionHeader").AccordionHeaderProps>;
+    Body: BsPrefixRefForwardingComponent<"div", import("./AccordionBody").AccordionBodyProps>;
+};
+export default _default;

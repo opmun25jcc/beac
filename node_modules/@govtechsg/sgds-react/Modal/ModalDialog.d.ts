@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { BsPrefixProps } from '../utils/helpers';
+export interface ModalDialogProps extends React.HTMLAttributes<HTMLDivElement>, BsPrefixProps {
+    /**
+     * Render a large, extra large or small modal.
+     */
+    size?: 'sm' | 'lg' | 'xl';
+    /**
+     * Renders a fullscreen modal. Specifying a breakpoint will render the modal
+     * as fullscreen __below__ the breakpoint size.
+     */
+    fullscreen?: true | 'sm-down' | 'md-down' | 'lg-down' | 'xl-down' | 'xxl-down';
+    /**
+     * Specify whether the Component should be vertically centered
+     */
+    centered?: boolean;
+    /**
+    * Allows scrolling the `<Modal.Body>` instead of the entire Modal when overflowing.
+    */
+    scrollable?: boolean;
+    /**
+    * Forwards className to .modal-content
+    */
+    contentClassName?: string;
+}
+declare const ModalDialog: React.ForwardRefExoticComponent<ModalDialogProps & React.RefAttributes<HTMLDivElement>>;
+export default ModalDialog;
